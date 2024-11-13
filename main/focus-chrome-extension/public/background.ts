@@ -1,5 +1,3 @@
-// background/background.ts
-
 chrome.sidePanel
   .setPanelBehavior({ openPanelOnActionClick: true })
   .catch((error) => console.error(error));
@@ -19,7 +17,7 @@ async function showSummary(tabId: number) {
   }
   const injection = await chrome.scripting.executeScript({
     target: { tabId },
-    files: ['content/extract-content.js'],
+    files: ['scripts/extract-content.js'],
   });
   chrome.storage.session.set({ pageContent: injection[0].result });
 }

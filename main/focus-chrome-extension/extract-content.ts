@@ -1,5 +1,3 @@
-// content/extract-content.ts
-
 import { isProbablyReaderable, Readability } from '@mozilla/readability';
 
 function canBeParsed(document: Document): boolean {
